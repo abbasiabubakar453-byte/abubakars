@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Abubakar Clothes makes Indian kurtas, sherwanis and Pathani suits in handloom cotton, khadi, linen and raw silk.">
+<title>Abubakar Clothes | Indian ethnic wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Rozha+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #0E3B2F;
+    --motif: #1C5C49;
+    --motif-gold: #6F6A33;
+    --gold: #D6A23A;
+    --on-emerald: #F5F5F0;
+
+    --paper: #F5F5F0;
+    --surface: #ECEDE4;
+    --ink: #19201C;
+    --muted: #56605A;
+    --line: #CDD0C6;
+    --accent-text: #0E3B2F;
+    --focus: #0E3B2F;
+
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+    --display: "Rozha One", "Didot", "Bodoni MT", Georgia, serif;
+    --body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0F1512;
+      --surface: #16201B;
+      --ink: #ECEDE6;
+      --muted: #A3AEA7;
+      --line: #2A372F;
+      --accent-text: #E3B54F;
+      --focus: #E3B54F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0F1512;
+    --surface: #16201B;
+    --ink: #ECEDE6;
+    --muted: #A3AEA7;
+    --line: #2A372F;
+    --accent-text: #E3B54F;
+    --focus: #E3B54F;
+  }
+
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    background: var(--emerald);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+  .wrap {
+    width: min(100%, 76rem);
+    margin-inline: auto;
+    padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 88vh;
+    min-height: 88svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--emerald);
+    color: var(--on-emerald);
+  }
+  .hero :focus-visible { outline-color: #F0C25A; }
+  .stamps {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .stamp-inner {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+    transform: scale(0.6);
+    animation: stamp 0.5s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+  }
+  .stamp-inner use { fill: var(--motif); }
+  .stamp-inner.is-gold use { fill: var(--motif-gold); }
+  @keyframes stamp { to { opacity: 1; transform: scale(1); } }
+
+  .topbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.25rem;
+  }
+  .mark { display: inline-flex; padding: 0.25rem; }
+  .nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 1.5rem; }
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+  .hero-copy {
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: clamp(2.5rem, 7vw, 5.5rem);
+  }
+  .hero h1 {
+    font-size: clamp(3.4rem, 1.4rem + 10.5vw, 9rem);
+    line-height: 0.96;
+    letter-spacing: -0.012em;
+    max-width: 12ch;
+  }
+  .tagline {
+    margin-top: 1.5rem;
+    font-family: var(--display);
+    font-size: clamp(1.35rem, 1rem + 1.4vw, 2rem);
+    line-height: 1.25;
+  }
+  .lede {
+    margin-top: 0.9rem;
+    max-width: 38rem;
+    font-size: 1.125rem;
+    color: rgba(245, 245, 240, 0.88);
+  }
+  .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 1.5rem;
+    border: 1.5px solid transparent;
+    border-radius: 4px;
+    font: 600 1rem/1 var(--body);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--gold); color: #1A1608; }
+  .btn-primary:hover { background: #E4B44D; }
+  .btn-ghost { border-color: currentColor; color: inherit; background: transparent; }
+  .btn-ghost:hover { background: rgba(245, 245, 240, 0.12); }
+
+  /* ---------- Sections ---------- */
+  .section { padding-block: clamp(3.5rem, 8vw, 7rem); }
+  .section-surface { background: var(--surface); }
+  .section-head { max-width: 40rem; margin-bottom: clamp(2rem, 4vw, 3.25rem); }
+  h2 { font-size: clamp(2rem, 1.3rem + 2.8vw, 3.4rem); line-height: 1.08; }
+  .section-head p { margin-top: 0.9rem; color: var(--muted); max-width: 34rem; }
+
+  /* Collections */
+  .grid { display: grid; grid-template-columns: 1fr; gap: clamp(1.75rem, 3vw, 2.5rem) 1.5rem; }
+  @media (min-width: 36rem) and (max-width: 55.99rem) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .c-a { grid-column: 1 / -1; }
+  }
+  @media (min-width: 56rem) {
+    .grid { grid-template-columns: repeat(12, 1fr); }
+    .c-a { grid-column: span 7; }
+    .c-b { grid-column: span 5; }
+    .c-c, .c-d, .c-e { grid-column: span 4; }
+  }
+  .card { display: flex; flex-direction: column; min-width: 0; }
+  .swatch {
+    --stitch: rgba(245, 245, 240, 0.7);
+    position: relative;
+    flex: 1;
+    min-height: 14rem;
+    overflow: hidden;
+  }
+  .swatch.is-light { --stitch: rgba(39, 51, 45, 0.65); }
+  .c-a .swatch, .c-b .swatch { min-height: clamp(16rem, 30vw, 24rem); }
+  .swatch-art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .swatch::after {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1.5px dashed var(--stitch);
+    pointer-events: none;
+  }
+  .card h3 { margin-top: 1rem; font-size: 1.5rem; line-height: 1.2; }
+  .card p { margin-top: 0.4rem; color: var(--muted); max-width: 34rem; }
+  .linkbtn {
+    align-self: flex-start;
+    min-height: 44px;
+    margin-top: 0.25rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent-text);
+    font: 600 1rem/1 var(--body);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    cursor: pointer;
+  }
+
+  /* Fabrics */
+  .fabrics { display: grid; grid-template-columns: 1fr; gap: 2rem 2rem; list-style: none; margin: 0; padding: 0; }
+  @media (min-width: 36rem) { .fabrics { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 62rem) { .fabrics { grid-template-columns: repeat(4, 1fr); } }
+  .fabric { border-top: 2px solid var(--ink); padding-top: 1rem; }
+  .fabric h3 { font-size: 1.45rem; }
+  .fabric p { margin-top: 0.5rem; color: var(--muted); }
+
+  /* Story */
+  .story { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 50rem) { .story { grid-template-columns: 5fr 7fr; gap: 3rem; } }
+  .story-lead { font-size: clamp(1.25rem, 1rem + 0.9vw, 1.5rem); line-height: 1.45; max-width: 36rem; }
+  .story-more { margin-top: 1.25rem; color: var(--muted); max-width: 36rem; }
+
+  /* Ordering steps */
+  .steps { counter-reset: step; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 46rem) { .steps { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+  .steps li { counter-increment: step; border-top: 1px solid var(--line); padding-top: 1rem; }
+  .steps li::before {
+    content: counter(step);
+    display: block;
+    font-family: var(--display);
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--accent-text);
+  }
+  .steps h3 { margin-top: 0.6rem; font-size: 1.4rem; }
+  .steps p { margin-top: 0.4rem; color: var(--muted); max-width: 26rem; }
+
+  /* Enquiry */
+  .enquiry {
+    background: var(--emerald);
+    color: var(--on-emerald);
+    color-scheme: dark;
+    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  }
+  .enquiry :focus-visible { outline-color: #F0C25A; }
+  .enquiry-grid { display: grid; grid-template-columns: 1fr; gap: 2.25rem; }
+  @media (min-width: 50rem) { .enquiry-grid { grid-template-columns: 5fr 6fr; gap: 4rem; } }
+  .enquiry-intro p { margin-top: 1rem; max-width: 26rem; color: rgba(245, 245, 240, 0.88); }
+  .field { margin-bottom: 1.1rem; }
+  .field label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+  .field input, .field select, .field textarea {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid rgba(245, 245, 240, 0.5);
+    border-radius: 4px;
+    background: rgba(245, 245, 240, 0.08);
+    color: var(--on-emerald);
+    font: inherit;
+  }
+  .field textarea { min-height: 7rem; resize: vertical; }
+  .field input[aria-invalid="true"] { border-color: #F0C25A; }
+  .status { min-height: 1.6em; margin-top: 1rem; }
+  .status a { color: #F0C25A; }
+
+  .foot {
+    background: var(--emerald);
+    color: rgba(245, 245, 240, 0.8);
+    padding-block: 1.75rem 2rem;
+    border-top: 1px solid rgba(245, 245, 240, 0.18);
+    font-size: 0.95rem;
+  }
+  .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 2rem; align-items: baseline; }
+  .foot strong { font-family: var(--display); font-weight: 400; font-size: 1.25rem; color: var(--on-emerald); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stamp-inner { animation: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared SVG definitions: flower motif and fabric patterns -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <ellipse id="petal" cx="0" cy="-13" rx="6" ry="12"/>
+    <g id="rosette">
+      <use href="#petal"/>
+      <use href="#petal" transform="rotate(45)"/>
+      <use href="#petal" transform="rotate(90)"/>
+      <use href="#petal" transform="rotate(135)"/>
+      <use href="#petal" transform="rotate(180)"/>
+      <use href="#petal" transform="rotate(225)"/>
+      <use href="#petal" transform="rotate(270)"/>
+      <use href="#petal" transform="rotate(315)"/>
+      <circle r="4.5" style="fill:var(--emerald)"/>
+    </g>
+
+    <!-- Kurta sets: block-printed flowers -->
+    <pattern id="p-booti" width="64" height="64" patternUnits="userSpaceOnUse">
+      <rect width="64" height="64" fill="#0E3B2F"/>
+      <g fill="#D6A23A" transform="translate(16 16) scale(.42)"><use href="#rosette"/></g>
+      <g fill="#D6A23A" transform="translate(48 48) scale(.42)"><use href="#rosette"/></g>
+      <circle cx="48" cy="16" r="1.6" fill="#3E8A6E"/>
+      <circle cx="16" cy="48" r="1.6" fill="#3E8A6E"/>
+    </pattern>
+
+    <!-- Sherwanis: jaali lattice -->
+    <pattern id="p-jaali" width="48" height="48" patternUnits="userSpaceOnUse">
+      <rect width="48" height="48" fill="#1F2A44"/>
+      <path d="M24 3 L45 24 L24 45 L3 24 Z" fill="none" stroke="#D6A23A" stroke-width="1.4"/>
+      <circle cx="24" cy="24" r="4" fill="#D6A23A"/>
+      <circle cx="0" cy="0" r="2.5" fill="#D6A23A"/>
+      <circle cx="48" cy="0" r="2.5" fill="#D6A23A"/>
+      <circle cx="0" cy="48" r="2.5" fill="#D6A23A"/>
+      <circle cx="48" cy="48" r="2.5" fill="#D6A23A"/>
+    </pattern>
+
+    <!-- Pathani suits: khadi stripe -->
+    <pattern id="p-khadi" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#E9E5D6"/>
+      <rect x="6" width="2.4" height="40" fill="#27332D"/>
+      <rect x="13" width="0.9" height="40" fill="#27332D"/>
+      <rect x="26" width="0.9" height="40" fill="#27332D"/>
+      <rect x="33" width="2.4" height="40" fill="#27332D"/>
+      <rect y="10" width="40" height="0.6" fill="#27332D" opacity=".08"/>
+      <rect y="30" width="40" height="0.6" fill="#27332D" opacity=".08"/>
+    </pattern>
+
+    <!-- Indo-western: ikat zigzag -->
+    <pattern id="p-ikat" width="40" height="30" patternUnits="userSpaceOnUse">
+      <rect width="40" height="30" fill="#5C1F2C"/>
+      <path d="M0 13 L10 3 L20 13 L30 3 L40 13" fill="none" stroke="#E9E5D6" stroke-width="2.5"/>
+      <path d="M0 27 L10 17 L20 27 L30 17 L40 27" fill="none" stroke="#D6A23A" stroke-width="2.5"/>
+    </pattern>
+
+    <!-- Accessories: bandhani dots -->
+    <pattern id="p-bandhani" width="28" height="28" patternUnits="userSpaceOnUse">
+      <rect width="28" height="28" fill="#D6A23A"/>
+      <circle cx="14" cy="8.5" r="1.8" fill="#8E2B36"/>
+      <circle cx="8.5" cy="14" r="1.8" fill="#8E2B36"/>
+      <circle cx="19.5" cy="14" r="1.8" fill="#8E2B36"/>
+      <circle cx="14" cy="19.5" r="1.8" fill="#8E2B36"/>
+      <circle cx="14" cy="14" r="2.4" fill="#8E2B36"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="hero">
+  <svg id="stamps" class="stamps" viewBox="0 0 1280 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"></svg>
+
+  <div class="wrap topbar">
+    <a class="mark" href="#top" aria-label="Abubakar Clothes, back to top">
+      <svg width="36" height="36" viewBox="-30 -30 60 60" fill="#D6A23A" aria-hidden="true"><use href="#rosette"/></svg>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#collections">Collections</a>
+      <a href="#fabrics">Fabrics</a>
+      <a href="#enquiry">Enquire</a>
+    </nav>
+  </div>
+
+  <div class="wrap hero-copy" id="top">
+    <h1>Abubakar Clothes</h1>
+    <p class="tagline">Rooted in tradition. Made for today.</p>
+    <p class="lede">Indian kurtas, sherwanis and Pathani suits, cut in handloom cotton, khadi, linen and raw silk.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#collections">See collections</a>
+      <a class="btn btn-ghost" href="#enquiry">Send an enquiry</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="collections" aria-labelledby="collections-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="collections-title">Collections</h2>
+        <p>Every line starts with the fabric. Pick the one that fits the occasion.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card c-a">
+          <div class="swatch">
+            <svg class="swatch-art" aria-hidden="true"><rect width="100%" height="100%" fill="url(#p-booti)"/></svg>
+          </div>
+          <h3>Kurta sets</h3>
+          <p>Everyday and festive kurtas with matching pyjama or churidar, in block-printed handloom cotton and linen.</p>
+          <button class="linkbtn" type="button" data-line="Kurta sets">Ask about kurta sets</button>
+        </article>
+
+        <article class="card c-b">
+          <div class="swatch">
+            <svg class="swatch-art" aria-hidden="true"><rect width="100%" height="100%" fill="url(#p-jaali)"/></svg>
+          </div>
+          <h3>Sherwanis and Nehru jackets</h3>
+          <p>Structured pieces for weddings and Eid, finished with jaali-inspired detailing.</p>
+          <button class="linkbtn" type="button" data-line="Sherwanis and Nehru jackets">Ask about sherwanis</button>
+        </article>
+
+        <article class="card c-c">
+          <div class="swatch is-light">
+            <svg class="swatch-art" aria-hidden="true"><rect width="100%" height="100%" fill="url(#p-khadi)"/></svg>
+          </div>
+          <h3>Pathani suits</h3>
+          <p>A clean two-piece with a relaxed fit and minimal detailing, in khadi and cotton.</p>
+          <button class="linkbtn" type="button" data-line="Pathani suits">Ask about Pathani suits</button>
+        </article>
+
+        <article class="card c-d">
+          <div class="swatch">
+            <svg class="swatch-art" aria-hidden="true"><rect width="100%" height="100%" fill="url(#p-ikat)"/></svg>
+          </div>
+          <h3>Indo-western</h3>
+          <p>Kurta shirts and jackets that work for a festival and a normal workday.</p>
+          <button class="linkbtn" type="button" data-line="Indo-western">Ask about Indo-western</button>
+        </article>
+
+        <article class="card c-e">
+          <div class="swatch is-light">
+            <svg class="swatch-art" aria-hidden="true"><rect width="100%" height="100%" fill="url(#p-bandhani)"/></svg>
+          </div>
+          <h3>Dupattas and accessories</h3>
+          <p>Bandhani dupattas, stoles, caps and mojaris to finish the outfit.</p>
+          <button class="linkbtn" type="button" data-line="Dupattas and accessories">Ask about accessories</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-surface" id="fabrics" aria-labelledby="fabrics-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="fabrics-title">Fabrics we work with</h2>
+        <p>Natural cloth that breathes, wears well and looks better with age.</p>
+      </div>
+      <ul class="fabrics">
+        <li class="fabric">
+          <h3>Khadi</h3>
+          <p>Hand-spun, hand-woven cotton. Breathable and lightly textured, and softer with every wash.</p>
+        </li>
+        <li class="fabric">
+          <h3>Handloom cotton</h3>
+          <p>Soft and light. It holds block prints well and suits daily wear.</p>
+        </li>
+        <li class="fabric">
+          <h3>Linen</h3>
+          <p>Cool and crisp for hot, humid days. It creases, and that is part of its look.</p>
+        </li>
+        <li class="fabric">
+          <h3>Raw silk</h3>
+          <p>A textured silk with a quiet sheen. Our choice for festive and wedding pieces.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="story" aria-labelledby="story-title">
+    <div class="wrap story">
+      <h2 id="story-title">Why Abubakar Clothes</h2>
+      <div>
+        <p class="story-lead">Abubakar Clothes began with a simple belief: good clothes should carry a story. Each piece blends Indian craftsmanship with a modern fit, made for people who value comfort, dignity and style.</p>
+        <p class="story-more">We use natural fabrics, traditional prints and clean cuts, so a piece looks right at a wedding and still feels right on an ordinary Friday.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-surface" id="order" aria-labelledby="order-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="order-title">How ordering works</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Choose a line</h3>
+          <p>Look through the collections and tell us what you have in mind.</p>
+        </li>
+        <li>
+          <h3>Share your size</h3>
+          <p>Send your measurements or pick a standard size. We confirm the fit with you.</p>
+        </li>
+        <li>
+          <h3>We stitch and send</h3>
+          <p>Your order is made and sent to you, and we message you along the way.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="enquiry" id="enquiry" aria-labelledby="enquiry-title">
+    <div class="wrap enquiry-grid">
+      <div class="enquiry-intro">
+        <h2 id="enquiry-title">Send an enquiry</h2>
+        <p>Tell us what you are looking for. Your message opens in WhatsApp so you can send it to us directly.</p>
+      </div>
+
+      <form id="enquiry-form" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-line">What are you looking for?</label>
+          <select id="f-line">
+            <option>Kurta sets</option>
+            <option>Sherwanis and Nehru jackets</option>
+            <option>Pathani suits</option>
+            <option>Indo-western</option>
+            <option>Dupattas and accessories</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-note">Size, occasion or date (optional)</label>
+          <textarea id="f-note"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send on WhatsApp</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <strong>Abubakar Clothes</strong>
+    <span>Indian ethnic wear in natural fabrics.</span>
+    <span>&copy; 2026 Abubakar Clothes</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Put the shop's WhatsApp number here: country code plus number, digits only (for example 919876543210).
+  var WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Hero: block-print flowers stamped in a half-drop repeat
+  var svg = document.getElementById("stamps");
+  if (svg) {
+    var NS = "http://www.w3.org/2000/svg";
+    var cellX = 92, cellY = 78;
+    for (var r = 0; r < 11; r++) {
+      for (var c = 0; c < 14; c++) {
+        var x = c * cellX + (r % 2 ? cellX / 2 : 0) + 20;
+        var y = r * cellY + 30;
+        var outer = document.createElementNS(NS, "g");
+        outer.setAttribute("transform", "translate(" + x + " " + y + ")");
+        var inner = document.createElementNS(NS, "g");
+        inner.setAttribute("class", "stamp-inner" + (((r * 3 + c) % 7 === 0) ? " is-gold" : ""));
+        inner.style.animationDelay = (c * 0.05 + r * 0.06 + ((c * 7 + r * 13) % 5) * 0.02).toFixed(2) + "s";
+        var use = document.createElementNS(NS, "use");
+        use.setAttribute("href", "#rosette");
+        inner.appendChild(use);
+        outer.appendChild(inner);
+        svg.appendChild(outer);
+      }
+    }
+  }
+
+  // Collection buttons pre-fill the enquiry form
+  var select = document.getElementById("f-line");
+  var enquiry = document.getElementById("enquiry");
+  var buttons = document.querySelectorAll("[data-line]");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      select.value = this.getAttribute("data-line");
+      enquiry.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+      select.focus({ preventScroll: true });
+    });
+  }
+
+  // Enquiry form opens a WhatsApp message
+  var form = document.getElementById("enquiry-form");
+  var nameInput = document.getElementById("f-name");
+  var note = document.getElementById("f-note");
+  var statusEl = document.getElementById("status");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    statusEl.textContent = "";
+    var name = nameInput.value.trim();
+    if (!name) {
+      nameInput.setAttribute("aria-invalid", "true");
+      statusEl.textContent = "Enter your name so we know who to reply to.";
+      nameInput.focus();
+      return;
+    }
+    nameInput.removeAttribute("aria-invalid");
+
+    if (!/^\d{8,15}$/.test(WHATSAPP_NUMBER)) {
+      statusEl.textContent = "WhatsApp enquiries are not switched on yet. Please check back soon.";
+      return;
+    }
+
+    var text = "Hello Abubakar Clothes, my name is " + name + ". I am interested in: " + select.value + "." +
+      (note.value.trim() ? " " + note.value.trim() : "");
+    var link = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+
+    var a = document.createElement("a");
+    a.href = link;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "Open WhatsApp";
+    statusEl.appendChild(document.createTextNode("Your message is ready. If WhatsApp did not open, "));
+    statusEl.appendChild(a);
+    statusEl.appendChild(document.createTextNode("."));
+    window.open(link, "_blank", "noopener");
+  });
+})();
+</script>
+</body>
+</html>
